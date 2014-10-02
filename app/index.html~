@@ -28,12 +28,15 @@
         <tbody>
             <tr>  
                <td>Total requirements</td>
+               <td><%= Requirement.count %></td>   
             </tr>
             <tr>  
                <td>Open requirements</td>
+               <td><%= Requirement.where(:status => 'open').count %></td>   
             </tr>
             <tr>  
                <td>Requirements past due</td>
+               <td><%= Requirement.where(:status => 'open').count %></td>   
             </tr>
         </tbody>  
       </table>
