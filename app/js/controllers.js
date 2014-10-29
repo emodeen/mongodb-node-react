@@ -10,6 +10,14 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone',
     $scope.orderProp = 'age';
   }]);
 
+
+
+phonecatControllers.controller('clickCtrl', ['$scope', 'Phone',
+  function($scope, Phone) {
+       console.log('called click controller')
+  }]);
+
+
 phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Phone',
   function($scope, $routeParams, Phone) {
     $scope.phone = Phone.get({phoneId: $routeParams.phoneId}, function(phone) {
