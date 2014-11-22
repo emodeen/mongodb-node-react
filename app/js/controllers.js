@@ -10,7 +10,12 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone',
     $scope.orderProp = 'age';
   }]);
 
-
+phonecatControllers.controller('HipaaReqCtrl', ['$scope', 'Phone',
+  function($scope, Phone) {
+      $scope.requirements = [{name:'Eric',id:1},
+			     {name:'Nate',id:2},
+			     {name:'Sally',id:3}];
+  }]);
 
 phonecatControllers.controller('clickCtrl', ['$scope', 'Phone',
   function($scope, Phone) {

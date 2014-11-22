@@ -23,7 +23,8 @@
   <table class="table table-bordered">
         <tbody>
             <tr>  
-               <td>Total requirements</td>
+              <td>Total requirements</td>
+	      <td>3</td>
             </tr>
             <tr>  
                <td>Open requirements</td>
@@ -32,9 +33,19 @@
                <td>Past due</td>
             </tr>
         </tbody>  
-      </table>
+  </table>
 <div ng-controller="clickCtrl">
   <button class="btn btn-primary" ng-click="itWorks()">Click here</button>
 </div>
+
+  <table class="table table-bordered" ng-controller='HipaaReqCtrl'>
+        <tbody>
+            <tr ng-repeat='req in requirements'>  
+              <td>{{req.id}}</td>
+	      <td>{{req.name}}</td>
+            </tr>
+        </tbody>  
+  </table>
+
 </body>
 </html>
