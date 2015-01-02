@@ -15,11 +15,10 @@ phonecatControllers.controller('HipaaReqCtrl', ['$scope', 'Phone',
       $scope.requirements = [{name:'Eric',id:1},
 			     {name:'Nate',id:2},
 			     {name:'Sally',id:3}];
-  }]);
 
-phonecatControllers.controller('clickCtrl', ['$scope', 'Phone',
-  function($scope, Phone) {
-       console.log('called click controller')
+      $scope.addContact = function() {
+         console.log('add contact')
+      };
   }]);
 
 

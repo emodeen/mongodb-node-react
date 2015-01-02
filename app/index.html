@@ -34,11 +34,11 @@
             </tr>
         </tbody>  
   </table>
-<div ng-controller="clickCtrl">
-  <button class="btn btn-primary" ng-click="itWorks()">Click here</button>
-</div>
+<div ng-controller="HipaaReqCtrl">
+  <button class="btn btn-primary" ng-click="addContact()">Click here</button>
 
-  <table class="table table-bordered" ng-controller='HipaaReqCtrl'>
+
+  <table class="table table-bordered">
         <tbody>
             <tr ng-repeat='req in requirements'>  
               <td>{{req.id}}</td>
@@ -46,6 +46,6 @@
             </tr>
         </tbody>  
   </table>
-
+</div>
 </body>
 </html>
