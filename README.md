@@ -1,1 +1,1 @@
-# Dashboard of HIPAA requirements todo list
+# HIPAA requirements todo list
