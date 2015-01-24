@@ -16,8 +16,13 @@ phonecatControllers.controller('HipaaReqCtrl', ['$scope', 'Phone',
 			     {name:'Nate',id:2},
 			     {name:'Sally',id:3}];
 
-      $scope.addContact = function() {
-         console.log('add contact')
+      $scope.addRow = function() {
+        var req  = {
+          name: $scope.name,
+          id: $scope.id
+        };
+
+        $scope.requirements.push(req);
       };
   }]);
 
