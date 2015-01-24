@@ -14,6 +14,25 @@ describe('PhoneCat controllers', function() {
   beforeEach(module('phonecatApp'));
   beforeEach(module('phonecatServices'));
 
+  /* jasmine specs for HipaaReq controller */
+  describe('HipaaReqCtrl', function(){
+    var scope, ctrl, $httpBackend;
+
+    beforeEach(inject(function(_$httpBackend_, $rootScope, $controller) {
+      $httpBackend = _$httpBackend_;
+      $httpBackend.expectGET('phones/phones.json').
+          respond([{name: 'Nexus S'}, {name: 'Motorola DROID'}]);
+
+      scope = $rootScope.$new();
+      ctrl = $controller('HipaaReqCtrl', {$scope: scope});
+    }));
+
+    it('should have requirements table with more than 2 rows ', function() {
+      expect(scope.requirements.length).toBeGreaterThan(2);
+    });
+  });
+
+  /* jasmine specs for PhoneListCtrl */    
   describe('PhoneListCtrl', function(){
     var scope, ctrl, $httpBackend;
 
@@ -25,7 +44,6 @@ describe('PhoneCat controllers', function() {
       scope = $rootScope.$new();
       ctrl = $controller('PhoneListCtrl', {$scope: scope});
     }));
-
 
     it('should create "phones" model with 2 phones fetched from xhr', function() {
       expect(scope.phones).toEqualData([]);
@@ -42,6 +60,7 @@ describe('PhoneCat controllers', function() {
   });
 
 
+  /* Jasmine specs for PhoneDetailCtrl */
   describe('PhoneDetailCtrl', function(){
     var scope, $httpBackend, ctrl,
         xyzPhoneData = function() {
@@ -51,7 +70,6 @@ describe('PhoneCat controllers', function() {
           }
         };
 
-
     beforeEach(inject(function(_$httpBackend_, $rootScope, $routeParams, $controller) {
       $httpBackend = _$httpBackend_;
       $httpBackend.expectGET('phones/xyz.json').respond(xyzPhoneData());
@@ -60,7 +78,6 @@ describe('PhoneCat controllers', function() {
       scope = $rootScope.$new();
       ctrl = $controller('PhoneDetailCtrl', {$scope: scope});
     }));
-
 
     it('should fetch phone detail', function() {
       expect(scope.phone).toEqualData({});
