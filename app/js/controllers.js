@@ -24,6 +24,11 @@ phonecatControllers.controller('HipaaReqCtrl', ['$scope', 'Phone',
 
         $scope.requirements.push(req);
       };
+
+      $scope.removeRow = function(){
+        $scope.requirements.splice(0, 1);
+      };  
+
   }]);
 
 
