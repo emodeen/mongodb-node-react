@@ -1,5 +1,3 @@
-# This is a dashboard that allows a user to manage an organization's HIPAA requirements.
-
 Installation instructions
 
 1.	Go to the directory where you want to install the application.
