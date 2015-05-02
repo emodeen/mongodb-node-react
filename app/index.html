@@ -2,7 +2,7 @@
 <html lang="en" ng-app="phonecatApp">
 <head>
   <meta charset="utf-8">
-  <title>Google Phone Gallery</title>
+  <title>HIPAA Requirements Dashboard</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="css/app.css">
   <link rel="stylesheet" href="css/animations.css">
@@ -34,9 +34,11 @@
             </tr>
         </tbody>  
   </table>
-<div ng-controller="HipaaReqCtrl">
-  <button class="btn btn-primary" ng-click="addRow()">Add row</button>
-  <button class="btn btn-primary" ng-click="removeRow()">Remove row</button>
+  <div ng-controller="HipaaReqCtrl">
+
+  <button type="button" class="btn btn-default" ng-click="addRow()" data-toggle="tooltip" data-placement="top" title="Add a row.">Add</button>
+  <button type="button" class="btn btn-default" ng-click="removeRow()" data-toggle="tooltip" data-placement="top" title="Remove a row.">Remove</button>    
+    
 
   <table class="table table-hover table-bordered">
         <tbody>
