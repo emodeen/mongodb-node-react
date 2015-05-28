@@ -27,8 +27,20 @@ phonecatControllers.controller('HipaaReqCtrl', ['$scope', 'Phone',
 
       $scope.removeRow = function(){
         $scope.requirements.splice(0, 1);
-      };  
+      };
 
+      $scope.connectToDB = function() {
+
+        var mongoose = require('mongoose');
+        mongoose.connect('mongodb://localhost/test');
+
+	var db = mongoose.connection;
+        db.on('error', console.error.bind(console, 'connection error:'));
+        db.once('open', function (callback) {
+
+        });
+      };
+      
   }]);
 
 
