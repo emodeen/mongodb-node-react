@@ -1,54 +1,115 @@
 <!doctype html>
-<html lang="en" ng-app="phonecatApp">
+<html lang="en-us">
 <head>
-  <meta charset="utf-8">
-  <title>HIPAA Requirements Dashboard</title>
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-  <link rel="stylesheet" href="css/app.css">
-  <link rel="stylesheet" href="css/animations.css">
-
-  <script src="bower_components/jquery/jquery.js"></script>
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-animate/angular-animate.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="bower_components/angular-resource/angular-resource.js"></script>
-  <script src="js/app.js"></script>
-  <script src="js/animations.js"></script>
-  <script src="js/controllers.js"></script>
-  <script src="js/filters.js"></script>
-  <script src="js/services.js"></script>
+	<meta charset="utf-8">
+	<title>NR Dads' Group</title>
+	<!--link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Oswald:700|Merriweather:700,700italic' rel='stylesheet' type='text/css'-->
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+	<header id="page-header">
+		<div class="wrapper">
+			<h1><a href="index.html">NR Dads' Group</a></h1>
+			<nav id="navigation">
+				<ul id="navLinks">
+					<li><a href="index.html">Past Events</a></li>
+					<li><a href="designers.html">Event Ideas</a></li>			
+					<li><a href="how.html">Venues</a></li>			
+				</ul>
+				<li class='hamburger'>
+					<a href='#nav-drop'>
+						<div class='hamburgerRow'></div>
+						<div class='hamburgerRow'></div>
+						<div class='hamburgerRow'></div> 
+					</a>
+				</li>				
+			</nav>
+		</div>
+	</header>
+	<section>
+		<table class="table table-hover">
+		<tbody>
+		  <tr class="header-row">
+		    <td>Date</td>
+		    <td>Time</td>
+		    <td>Venue</td>
+		    <td># Attendees</td>
+		    <td>Rating</td>		    
+		  </tr>
+		  <tr class='past-event'>
+		    <td>10-31-15</td>
+		    <td>6pm</td>
+		    <td class='past-venue'>My Diner</td>
+		    <td>9</td>
+		    <td class='past-rating'>4.2</td>		    
+		  </tr>
+		  <tr class='past-event'>
+		    <td>9-27-15</td>
+		    <td>6pm</td>
+		    <td class='past-venue'>BK</td>
+		    <td>12</td>
+		    <td class='past-rating'>3.6</td>		    
+		  </tr>
+		  <tr class='past-event'>
+		    <td>8-24-15</td>
+		    <td>6:30pm</td>
+		    <td class='past-venue'>Legal Seafood</td>
+		    <td>10</td>
+		    <td class='past-rating'>4.5</td>		    
+		  </tr>
+		  <tr class='past-event'>
+		    <td>7-25-15</td>
+		    <td>6pm</td>
+		    <td class='past-venue'>BK</td>
+		    <td>12</td>
+		    <td class='past-rating'>3.2</td>		    
+		  </tr>		  
+		  </tbody>		  		  
+		</table>		
+	</section>
 
-  <table class="table table-bordered">
-        <tbody>
-            <tr>  
-              <td>Total requirements</td>
-	      <td>3</td>
-            </tr>
-            <tr>  
-               <td>Open requirements</td>
-            </tr>
-            <tr>  
-               <td>Past due</td>
-            </tr>
-        </tbody>  
-  </table>
-  <div ng-controller="HipaaReqCtrl">
-
-  <button type="button" class="btn btn-default" ng-click="addRow()" data-toggle="tooltip" data-placement="top" title="Add a row.">Add</button>
-  <button type="button" class="btn btn-default" ng-click="removeRow()" data-toggle="tooltip" data-placement="top" title="Remove a row.">Remove</button>
-  <button type="button" class="btn btn-default" ng-click="connectToDB()" data-toggle="tooltip" data-placement="top" title="Save table.">Save</button>    
-    
-
-  <table class="table table-hover table-bordered">
-        <tbody>
-            <tr ng-repeat='req in requirements'>  
-              <td>{{req.id}}</td>
-	      <td>{{req.name}}</td>
-            </tr>
-        </tbody>  
-  </table>
-</div>
+	<form class="form-horizontal" id='past-form'>
+	  <div class="form-group">
+	    <label for="new-date" class="col-sm-2 control-label">Date</label>
+	    <div class="col-sm-10">
+	      <input type="date" class="form-control" id="new-date" placeholder="Date">
+	    </div>
+	  </div>
+	  <div class="form-group">
+	    <label for="new-time" class="col-sm-2 control-label">Time</label>
+	    <div class="col-sm-10">
+	      <input type="time" class="form-control" id="new-time" placeholder="Time">
+	    </div>
+	  </div>
+	  <div class="form-group">
+	    <label for="new-venue" class="col-sm-2 control-label">Venue</label>
+	    <div class="col-sm-10">
+	      <input type="text" class="form-control" id="new-venue" placeholder="Venue">
+	    </div>
+	  </div>
+	  <div class="form-group">
+	    <label for="new-num-attendees" class="col-sm-2 control-label"># Attendees</label>
+	    <div class="col-sm-10">
+	      <input type="text" class="form-control" id="new-num-attendees" placeholder="# Attendees">
+	    </div>
+	  </div>  
+	  <div class="form-group">
+	    <label for="new-rating" class="col-sm-2 control-label">Rating</label>
+	    <div class="col-sm-10">
+	      <input type="float" class="form-control" id="new-rating" placeholder="Rate on scale of 1-5">
+	    </div>
+	  </div>    
+	  <div class="form-group">
+	    <div class="col-sm-offset-2 col-sm-10">
+	      <button type="submit" class="btn btn-default">Add Event</button>
+	    </div>
+	  </div>
+	</form>
+	<footer>© 2015 NRDSC</footer>
+	<script src="js/jquery-2.1.4.js"></script>
+	<script src="js/main.js"></script>
 </body>
 </html>
