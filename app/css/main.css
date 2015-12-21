@@ -1,0 +1,166 @@
+html, body {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 20px;
+	line-height: 1.5;
+	cursor: default;
+	height: 100%;
+}
+
+.wrapper {
+	width: 97%;
+	margin: auto;
+}
+
+h1 {
+	font-size: 2em;
+	line-height: 1;
+}
+h2 {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+h3 {
+	font-family: 'Merriweather', serif;
+	font-size: 1.25em;
+	font-weight: bold;
+}
+p {
+	margin: 0 0 1.5em 0;
+}
+
+footer {
+	background: black;
+	color: white;
+	padding: 2% 3%;
+    position: fixed;
+    bottom:0;
+    width: 100%;
+    clear: both;
+}
+
+/* Styles for the header */
+
+
+#page-header {
+	background: black;
+	color: white;
+	overflow: hidden;
+	border-bottom: 4px solid yellow;
+	padding: 0 3%;
+}
+#page-header a {
+	color: inherit;
+	text-decoration: none;
+}
+#page-header h1 {
+	float: left;
+	color: yellow;
+	font-family: 'Merriweather', serif;
+	font-size: 1.5em;
+	margin: 20px 0 0 0;
+}
+#page-header nav {
+	float: right;
+	display: block;
+}
+#page-header nav li {
+	float: left;
+}
+
+#navigation {
+	display: block;
+}
+
+#navLinks {
+	display: block;
+}	    
+
+#page-header nav a {
+	display: block;
+	padding: 20px 15px;
+}
+#page-header nav li a:hover {
+	color: yellow;
+}
+#page-header nav li.active a {
+	background: #666;
+}
+
+.hamburger {
+	background: #000;
+	display: none;
+}
+
+.hamburgerRow {
+	background: #FFF;
+	height: 2px;
+	width: 40px;
+	padding: 2px;
+	margin-top: 10px;
+}
+
+/* Styling for the table */
+
+.header-row {
+	font-weight: bold;
+}
+
+/* Styling for the form */
+
+.form-group {
+	width: 50%;
+}
+
+.form-container {
+	display: block;
+	margin: 20px;
+}
+
+.row-input {
+	width: 10%;
+	border: 1px solid black;
+}
+
+label {
+	font-size: 15px;
+}
+
+
+
+
+@media only screen and (max-width:640px) {
+	#page-header h1 {
+		/*float: left;*/
+		color: yellow;
+		font-family: 'Merriweather', serif;
+		font-size: 1.5em;
+		margin: 20px 0 0 0;
+		width: 50%;
+		/*display: block;*/
+	}
+
+	#page-header nav {
+		float: right;
+		/*display: block;*/
+		width: 50%;
+    }
+
+	#page-header nav li {
+		float: none;
+		display: block;
+	}
+
+	/* Hide the hamburger icon */
+	.hamburger {
+		background: #000;
+
+	}
+
+	#navLinks {
+		display: none;
+	}	    
+}
+
+
+
+
