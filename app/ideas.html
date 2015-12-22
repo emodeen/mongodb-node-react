@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<title>NR Dads' Group</title>
+	<!--link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Oswald:700|Merriweather:700,700italic' rel='stylesheet' type='text/css'-->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<header id="page-header">
+		<div class="wrapper">
+			<h1><a href="index.html">NR Dads' Group</a></h1>
+			<nav id="navigation">
+				<ul id="navLinks">
+					<li><strong><a href="index.html">Past Events</a></strong></li>
+					<li><strong><a href="ideas.html">Event Ideas</a></strong></li>			
+					<li><a href="venues.html">Venues</a></li>			
+				</ul>
+				<li class='hamburger'>
+					<a href='#nav-drop'>
+						<div class='hamburgerRow'></div>
+						<div class='hamburgerRow'></div>
+						<div class='hamburgerRow'></div> 
+					</a>
+				</li>				
+			</nav>
+		</div>
+	</header>
+	<section>
+		<table class="table table-hover">
+			<tbody>
+		  <tr class="header-row">
+		    <td>Venue</td>
+		    <td>Location</td>
+		    <td>Pros</td>
+		    <td>Cons</td>
+		    <td>Votes</td>		    
+		  </tr>
+		  <tr>
+		    <td>Joe's</td>
+		    <td>Salem</td>		  	
+		    <td>unique atmosphere</td>
+		    <td>distance</td>
+		    <td>4</td>
+		  </tr>
+		  <tr>
+		    <td>Mike's</td>
+		    <td>Lynnfield</td>		  	
+		    <td>bowling</td>
+		    <td>price</td>
+		    <td>1</td>
+		  </tr>
+		  <tr>
+		    <td>Tom's</td>
+		    <td>Reading</td>		  	
+		    <td>new venue</td>
+		    <td>closes early</td>
+		    <td>7</td>
+		  </tr>
+		  </tbody>		  		  
+		</table>		
+	</section>
+
+	<form class="form-horizontal" id='idea-form'>
+	  <div class="form-group">
+	    <label for="new-venue" class="col-sm-2 control-label">Venue</label>
+	    <div class="col-sm-10">
+	      <input type="text" class="form-control" id="new-venue" placeholder="Venue">
+	    </div>
+	  </div>
+	  <div class="form-group">
+	    <label for="new-location" class="col-sm-2 control-label">Location</label>
+	    <div class="col-sm-10">
+	      <input type="text" class="form-control" id="new-location" placeholder="Location">
+	    </div>
+	  </div>
+	  <div class="form-group">
+	    <label for="new-pros" class="col-sm-2 control-label">Pros</label>
+	    <div class="col-sm-10">
+	      <input type="text" class="form-control" id="new-pros" placeholder="Pros for this location">
+	    </div>
+	  </div>
+	  <div class="form-group">
+	    <label for="new-cons" class="col-sm-2 control-label">Cons</label>
+	    <div class="col-sm-10">
+	      <input type="text" class="form-control" id="new-cons" placeholder="Cons for this location">
+	    </div>
+	  </div>  
+	  <div class="form-group">
+	    <label for="new-votes" class="col-sm-2 control-label">Votes</label>
+	    <div class="col-sm-10">
+	      <input type="number" class="form-control" id="new-votes" placeholder="Number of votes">
+	    </div>
+	  </div>    
+	  <div class="form-group">
+	    <div class="col-sm-offset-2 col-sm-10">
+	      <button type="submit" class="btn btn-default">Add Event</button>
+	    </div>
+	  </div>
+	</form>
+	<footer>© 2015 NRDSC</footer>
+	<script src="js/jquery-2.1.4.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
