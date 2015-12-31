@@ -43,6 +43,11 @@ function calcAvgRating(venue) {
 	return avgRating;
 }
 
+function mongoTest() {
+
+		console.log('mongo test');
+}
+
 $(document).ready(function() {
 
     // Called when index.html is loaded
@@ -118,7 +123,14 @@ $(document).ready(function() {
 	  $("table").append('<tr class=\'data-row venueRow\'><td class=\'data venueName\'>'+venue+'</td><td class=\'data\'>'+location+'</td><td class=\'data avg\'>'+avgRating+'</td></tr>');
 	  $(".data-row").addClass('table-row');
 	  $(".data").addClass('table-column');
-  	});        	  
+  	});
+
+  	// called when save is clicked
+	$("#save").on("click", function(e){
+	  	e.preventDefault();
+
+	  	mongoTest();
+	});  	        	  
 });
 
 
