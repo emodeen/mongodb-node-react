@@ -1,4 +1,7 @@
 var mongoose = require('mongoose');
+var express = require('express');
+
+
 mongoose.connect('mongodb://localhost/test');
 
 var db = mongoose.connection;
