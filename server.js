@@ -1,11 +1,14 @@
 var mongoose = require('mongoose');
 var express = require('express');
+var db	 = require('./config/db');
+
+var app = express();
 
 
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect(db.url);
 
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
+var conn = mongoose.connection;
+conn.on('error', console.error.bind(console, 'connection error:'));
+conn.once('open', function() {
   console.log('connected!!');
 });
