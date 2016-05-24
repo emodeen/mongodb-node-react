@@ -5,7 +5,7 @@ var restaurantSchema = new mongoose.Schema({
      { collection: 'restaurant' }
 );
 
-exports.addAPIRouter = function(app, mongoose, stormpath) {
+exports.addAPIRouter = function(app, mongoose) {
  
     app.get('/*', function(req, res, next) {
         res.contentType('application/json');
@@ -23,3 +23,5 @@ exports.addAPIRouter = function(app, mongoose, stormpath) {
         res.contentType('application/json');
         next();
     });
+};
+
