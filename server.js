@@ -15,6 +15,7 @@ conn.once('open', function() {
 
 app.get('/', function (req, res) {
   res.send('Hello World!');
+  res.contentType('application/json');
 });
 
 app.listen(8000, function () {
