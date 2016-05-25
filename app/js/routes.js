@@ -1,9 +1,4 @@
-var restaurantSchema = new mongoose.Schema({
-         name: { type: String, trim: true },
-         city: { type: String, trim: true },
-     },
-     { collection: 'restaurant' }
-);
+
 
 exports.addAPIRouter = function(app, mongoose) {
  
