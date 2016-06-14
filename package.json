@@ -21,7 +21,8 @@
   },
   "dependencies": {
     "express": "^4.13.4",
-    "mongodb": "~2.0"
+    "mongodb": "~2.0",
+    "body-parser": "^1.4.3"
   },
   "scripts": {
     "postinstall": "bower install",
