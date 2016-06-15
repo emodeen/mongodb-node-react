@@ -27,7 +27,11 @@ var Restaurant = mongoose.model('Restaurant', restaurantSchema);
 //  console.log('connected!!');
 //});
 
-app.use('/', express.static(path.join(__dirname, 'public')));
+app.set('port', (process.env.PORT || 3000));
+
+//console.log('path=' + path);
+
+app.use(express.static('app'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -60,8 +64,8 @@ app.get('/restaurants', function (req, res) {
   });    
 });
 
-app.listen(8000, function () {
-  console.log('Example app listening on port 8000!');
+app.listen(app.get('port'), function() {
+  console.log('Server started: http://localhost:' + app.get('port') + '/');
 });
 
 
