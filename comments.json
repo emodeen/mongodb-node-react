@@ -1,4 +1,12 @@
 [
-  {id: 1, author: "Clint Eastwood", text: "This is one comment"},
-  {id: 2, author: "Eric Modeen", text: "This is *another* comment"}
+  {
+  	"id": 1, 
+  	"author": "Clint Eastwood", 
+  	"text": "This is one comment"
+  },
+  {
+  	"id": 2,
+  	"author": "Eric Modeen",
+  	"text": "This is *another* comment"
+  }
 ]
