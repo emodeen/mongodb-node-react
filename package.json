@@ -22,8 +22,7 @@
   "dependencies": {
     "express": "^4.13.4",
     "mongodb": "~2.0",
-    "body-parser": "^1.4.3",
-    "node-rest-client": "^1.8.0"
+    "body-parser": "^1.4.3"
   },
   "scripts": {
     "postinstall": "bower install",
