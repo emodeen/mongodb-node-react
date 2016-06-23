@@ -5,14 +5,6 @@ var mongoose = require('mongoose');
 var express = require('express');
 var db = require('./config/db');
 var app = express();
-var Client = require('node-rest-client').Client;
- 
-var client = new Client();
- 
-client.get("http://localhost:8080", function (data, response) {
-  // parsed response body as js object 
-  console.log(JSON.parse(data));
-});
 
 
 var COMMENTS_FILE = path.join(__dirname, 'comments.json');
