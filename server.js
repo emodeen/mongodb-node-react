@@ -9,9 +9,14 @@ var app = express();
 
 var COMMENTS_FILE = path.join(__dirname, 'comments.json');
 
-//mongoose.connect(db.url);
+mongoose.connect('mongodb://localhost/test');
 
-//var conn = mongoose.connection;
+var db_conn = mongoose.connection;
+db_conn.on('error', console.error.bind(console, 'connection error:'));
+db_conn.once('open', function() {
+  console.log('connected!!');
+});
+
 var RESTAURANTS_COLLECTION = "restaurants";
 
 var restaurantSchema = mongoose.Schema({
@@ -21,15 +26,7 @@ var restaurantSchema = mongoose.Schema({
 
 var Restaurant = mongoose.model('Restaurant', restaurantSchema);
 
-//conn.on('error', console.error.bind(console, 'connection error:'));
-
-//conn.once('open', function() {
-//  console.log('connected!!');
-//});
-
 app.set('port', (process.env.PORT || 3000));
-
-//console.log('path=' + path);
 
 app.use(express.static('app'));
 app.use(bodyParser.json());
