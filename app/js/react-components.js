@@ -25,10 +25,10 @@ var CommentBox = React.createClass({
   },
 
   render: function() {
-    return (
+    return (     
       <div className="commentBox">
         <h1>Comments</h1>
-        <CommentList data={this.state.data} />        
+        <CommentList data={this.state.data} />                
         <CommentForm />
       </div>
     );
@@ -37,10 +37,11 @@ var CommentBox = React.createClass({
 
 var CommentList = React.createClass({
   render: function() {
-    var commentNodes = this.props.data.map(function(comment) {
+
+    var commentNodes = this.props.data.map(function(restaurant) {
       return (
-        <Comment author={comment.author} key={comment.id}>
-          {comment.text}
+        <Comment name={restaurant.name} key={restaurant.restaurant_id}>
+          {restaurant.name}
         </Comment>
       );
     });  	
@@ -76,6 +77,6 @@ var CommentForm = React.createClass({
 });
 
 ReactDOM.render(
-  <CommentBox url="/api/comments" pollInterval={2000} />,	
+  <CommentBox url="/restaurants" pollInterval={2000} />,	
   document.getElementById('content')
 );      
