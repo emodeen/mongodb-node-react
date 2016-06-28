@@ -30,6 +30,7 @@ var CommentBox = React.createClass({
         <h1>Comments</h1>
         <CommentList data={this.state.data} />                
         <CommentForm />
+        <RestaurantTable />
       </div>
     );
   }
@@ -71,6 +72,24 @@ var CommentForm = React.createClass({
     return (
       <div className="commentForm">
         Hello, world! I am a CommentForm.
+      </div>
+    );
+  }
+});
+
+var RestaurantTable = React.createClass({
+  render: function() {
+    return (
+      <div className="restaurantTable">
+        <table>
+          <tbody>
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Description</th>
+            </tr>
+          </tbody>
+        </table>
       </div>
     );
   }
