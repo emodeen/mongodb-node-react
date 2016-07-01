@@ -69,7 +69,7 @@ var RestaurantRow = React.createClass({
   render: function() {
     return (
       <tr>
-        <td>Test1</td>
+        <td>{this.props.restaurant.name}</td>
         <td>Test2</td>
       </tr>
     );
@@ -80,7 +80,7 @@ var RestaurantTable = React.createClass({
   render: function() {
     var rows = [];
     this.props.data.forEach(function(restaurant) {
-      rows.push(<RestaurantRow restaurant={restaurant} key={restaurant.category}/>);
+      rows.push(<RestaurantRow restaurant={restaurant} key={restaurant.name}/>);
     });
     return (
       <table>
