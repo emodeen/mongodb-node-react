@@ -28,7 +28,7 @@ var CommentBox = React.createClass({
     return (     
       <div className="commentBox">
         <CommentList data={this.state.data} />                
-        <RestaurantTable />
+        <RestaurantTable data={this.state.data}/>
       </div>
     );
   }
@@ -67,18 +67,21 @@ var Comment = React.createClass({
 
 var RestaurantTable = React.createClass({
   render: function() {
+    var rows = [];
+    this.props.data.forEach(function(product) {
+      console.log('next row');
+      //rows.push(<ProductRow product={product} key={product.name} />);
+    });
     return (
-      <div className="restaurantTable">
-        <table>
-          <tbody>
-            <tr>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Description</th>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>{rows}</tbody>
+      </table>
     );
   }
 });
