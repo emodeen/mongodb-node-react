@@ -65,12 +65,22 @@ var Comment = React.createClass({
   }
 });
 
+var RestaurantRow = React.createClass({
+  render: function() {
+    return (
+      <tr>
+        <td>Test1</td>
+        <td>Test2</td>
+      </tr>
+    );
+  }
+});
+
 var RestaurantTable = React.createClass({
   render: function() {
     var rows = [];
-    this.props.data.forEach(function(product) {
-      console.log('next row');
-      //rows.push(<ProductRow product={product} key={product.name} />);
+    this.props.data.forEach(function(restaurant) {
+      rows.push(<RestaurantRow restaurant={restaurant} key={restaurant.category}/>);
     });
     return (
       <table>
