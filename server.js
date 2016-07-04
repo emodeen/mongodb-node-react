@@ -17,14 +17,14 @@ db_conn.once('open', function() {
   console.log('connected!!');
 });
 
-var RESTAURANTS_COLLECTION = "restaurants";
+var EVENTS_COLLECTION = "events";
 
-var restaurantSchema = mongoose.Schema({
+var eventSchema = mongoose.Schema({
   name: { type: String, trim: true },
   city: { type: String, trim: true }
 });
 
-var Restaurant = mongoose.model('Restaurant', restaurantSchema);
+var Event = mongoose.model('Restaurant', eventSchema);
 
 app.set('port', (process.env.PORT || 3000));
 
@@ -53,11 +53,11 @@ app.get('/api/comments', function(req, res) {
   });
 });
 
-// endpoint to retrieve all restaurants
-app.get('/restaurants', function (req, res) {
-  Restaurant.find(function (err, restaurants) {
+// endpoint to retrieve all events
+app.get('/events', function (req, res) {
+  Event.find(function (err, events) {
     if (err) return console.error(err);
-    res.send(restaurants);
+    res.send(events);
   });    
 });
 

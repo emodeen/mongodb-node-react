@@ -28,7 +28,7 @@ var CommentBox = React.createClass({
     return (     
       <div className="commentBox">
         <CommentList data={this.state.data} />                
-        <RestaurantTable data={this.state.data}/>
+        <EventTable data={this.state.data}/>
       </div>
     );
   }
@@ -37,10 +37,10 @@ var CommentBox = React.createClass({
 var CommentList = React.createClass({
   render: function() {
 
-    var commentNodes = this.props.data.map(function(restaurant) {
+    var commentNodes = this.props.data.map(function(event) {
       return (
-        <Comment name={restaurant.name} key={restaurant.restaurant_id}>
-          {restaurant.name}
+        <Comment name={event.name} key={event.event_id}>
+          {event.name}
         </Comment>
       );
     });  	
@@ -65,22 +65,22 @@ var Comment = React.createClass({
   }
 });
 
-var RestaurantRow = React.createClass({
+var EventRow = React.createClass({
   render: function() {
     return (
       <tr>
-        <td>{this.props.restaurant.name}</td>
+        <td>{this.props.event.name}</td>
         <td>Test2</td>
       </tr>
     );
   }
 });
 
-var RestaurantTable = React.createClass({
+var EventTable = React.createClass({
   render: function() {
     var rows = [];
-    this.props.data.forEach(function(restaurant) {
-      rows.push(<RestaurantRow restaurant={restaurant} key={restaurant.name}/>);
+    this.props.data.forEach(function(event) {
+      rows.push(<EventRow event={event} key={event.name}/>);
     });
     return (
       <table>
@@ -97,6 +97,6 @@ var RestaurantTable = React.createClass({
 });
 
 ReactDOM.render(
-  <CommentBox url="/restaurants" pollInterval={2000} />,	
+  <CommentBox url="/events" pollInterval={2000} />,	
   document.getElementById('content')
 );      
