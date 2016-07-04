@@ -50,11 +50,14 @@ var EventTable = React.createClass({
       rows.push(<EventRow event={event} key={event.name}/>);
     });
     return (
-      <table>
+      <table className="table table-hover">
         <thead>
-          <tr>
-            <th>Name</th>
-            <th>Price</th>
+          <tr className="header-row">
+            <th>Date</th>
+            <th>Time</th>
+            <th>Venue</th>
+            <th>Attendees</th>
+            <th>Rating</th>                        
           </tr>
         </thead>
         <tbody>{rows}</tbody>
