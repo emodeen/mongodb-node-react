@@ -20,11 +20,11 @@ db_conn.once('open', function() {
 var EVENTS_COLLECTION = "events";
 
 var eventSchema = mongoose.Schema({
-  name: { type: String, trim: true },
-  city: { type: String, trim: true }
+  venue: { type: String, trim: true },
+  rating: { type: String, trim: true }
 });
 
-var Event = mongoose.model('Restaurant', eventSchema);
+var Event = mongoose.model('Event', eventSchema);
 
 app.set('port', (process.env.PORT || 3000));
 

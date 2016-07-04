@@ -36,7 +36,7 @@ var EventRow = React.createClass({
   render: function() {
     return (
       <tr>
-        <td>{this.props.event.name}</td>
+        <td>{this.props.event.venue}</td>
         <td>Test2</td>
       </tr>
     );
