@@ -1,5 +1,4 @@
 
-
 var CommentBox = React.createClass({
   loadCommentsFromServer: function() {
     $.ajax({
@@ -27,39 +26,7 @@ var CommentBox = React.createClass({
   render: function() {
     return (     
       <div className="commentBox">
-        <CommentList data={this.state.data} />                
         <EventTable data={this.state.data}/>
-      </div>
-    );
-  }
-});
-
-var CommentList = React.createClass({
-  render: function() {
-
-    var commentNodes = this.props.data.map(function(event) {
-      return (
-        <Comment name={event.name} key={event.event_id}>
-          {event.name}
-        </Comment>
-      );
-    });  	
-    return (
-      <div className="commentList">
-        {commentNodes}
-      </div>
-    );
-  }
-});
-
-var Comment = React.createClass({
-  render: function() {
-    return (
-      <div className="comment">
-        <h2 className="commentAuthor">
-          {this.props.author}
-        </h2>
-        {this.props.children}
       </div>
     );
   }
