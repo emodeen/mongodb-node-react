@@ -20,8 +20,11 @@ db_conn.once('open', function() {
 var EVENTS_COLLECTION = "events";
 
 var eventSchema = mongoose.Schema({
+  date: { type: Date, default: Date.now },
+  time: { type: String, trim: true },
   venue: { type: String, trim: true },
-  rating: { type: String, trim: true }
+  attendees: { type: Number },
+  rating: { type: Number }
 });
 
 var Event = mongoose.model('Event', eventSchema);
