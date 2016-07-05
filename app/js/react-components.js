@@ -50,7 +50,7 @@ var EventTable = React.createClass({
   render: function() {
     var rows = [];
     this.props.data.forEach(function(event) {
-      rows.push(<EventRow event={event} key={event.name}/>);
+      rows.push(<EventRow event={event} key={event._id}/>);
     });
     return (
       <table className="table table-hover">
