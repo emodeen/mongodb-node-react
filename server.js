@@ -65,7 +65,7 @@ app.get('/events', function (req, res) {
 
 // endpoint to save an event
 app.post('/events', function(req, res) {
-  var nrdscEvent = new Event({ date: "6-31-16", time: "5am", venue: req.body.venue, attendees: "3", rating: "3.3" });  
+  var nrdscEvent = new Event({ date: "6-31-16", time: req.body.time, venue: req.body.venue, attendees: req.body.attendees, rating: req.body.rating });  
 
   nrdscEvent.save(function (err, nrdscEvent) {
     if (err) return console.error(err);
