@@ -82,19 +82,34 @@ $(document).ready(function() {
   	$("#past-form").on("submit", function(e){
 	  e.preventDefault();
 
-	  var date = $("#new-date").val();
-	  var time = $("#new-time").val();
-	  var venue = $("#new-venue").val();
+	  var newDate = $("#new-date").val();
+	  var newTime = $("#new-time").val();
+	  var newVenue = $("#new-venue").val();
 	  var numAttendees = $("#new-num-attendees").val();
-	  var rating = $("#new-rating").val();
+	  var newRating = $("#new-rating").val();
 
-	  $("table").append('<tr class=\'data-row past-event\'><td class=\'data\'>'+date+'</td><td class=\'data\'>'+time+'</td><td class=\'data past-venue\'>'+venue+'</td><td class=\'data\'>'+numAttendees+'</td><td class=\'data past-rating\'>'+rating+'</td></tr>');
+	  $("table").append('<tr class=\'data-row past-event\'><td class=\'data\'>'+newDate+'</td><td class=\'data\'>'+newTime+'</td><td class=\'data past-venue\'>'+newVenue+'</td><td class=\'data\'>'+numAttendees+'</td><td class=\'data past-rating\'>'+newRating+'</td></tr>');
 
-      var newEvent = new NREvent(venue, rating);
+      var newEvent = new NREvent(newVenue, newRating);
 
 	  pastEvents.push(newEvent);
 
-	  localStorage["pEvents"] = JSON.stringify(pastEvents);  
+	  localStorage["pEvents"] = JSON.stringify(pastEvents);
+
+	  // need to populate this JSON with the last entry in pastEvents array
+	  var eventData = JSON.stringify({ date: newDate, time: newTime, venue: newVenue, attendees: numAttendees, rating: newRating });
+
+      $.ajax({
+        	type: "POST",
+        	url: "/events",
+        	data: eventData,
+        	contentType: "application/json",
+        	error: function (xhr, ajaxOptions, thrownError) {
+           		console.log(xhr.status);
+           		console.log(xhr.responseText);
+           		console.log(thrownError);
+       		}
+      });	    
   	});  
 
   	$('#idea-form').on("submit", function(e){
@@ -127,6 +142,8 @@ $(document).ready(function() {
   	// called when save is clicked
 	$("#save").on("click", function(e){
 	  	e.preventDefault();
+
+	  	// need to populate this JSON with the last entry in pastEvents array
 	    var data = JSON.stringify({ date: "6-1-16", time: "7am", venue: "Yard House", attendees: "3", rating: "3.3" });
 
     	$.ajax({

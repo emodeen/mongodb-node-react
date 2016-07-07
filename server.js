@@ -6,7 +6,6 @@ var express = require('express');
 var db = require('./config/db');
 var app = express();
 
-
 var COMMENTS_FILE = path.join(__dirname, 'comments.json');
 
 mongoose.connect('mongodb://localhost/test');
@@ -66,8 +65,8 @@ app.get('/events', function (req, res) {
 
 // endpoint to save an event
 app.post('/events', function(req, res) {
-  console.log('post to events');
-  var nrdscEvent = new Event({ date: "6-1-16", time: "7am", venue: "Yard House", attendees: "3", rating: "3.3" });  
+  var nrdscEvent = new Event({ date: "6-31-16", time: "5am", venue: req.body.venue, attendees: "3", rating: "3.3" });  
+
   nrdscEvent.save(function (err, nrdscEvent) {
     if (err) return console.error(err);
   });
@@ -76,6 +75,3 @@ app.post('/events', function(req, res) {
 app.listen(app.get('port'), function() {
   console.log('Server started: http://localhost:' + app.get('port') + '/');
 });
-
-
-//routes.addAPIRouter(app, mongoose);
