@@ -138,25 +138,6 @@ $(document).ready(function() {
 	  $(".data-row").addClass('table-row');
 	  $(".data").addClass('table-column');
   	});
-
-  	// called when save is clicked
-	$("#save").on("click", function(e){
-	  	e.preventDefault();
-
-	  	// need to populate this JSON with the last entry in pastEvents array
-	    var data = JSON.stringify({ date: "6-1-16", time: "7am", venue: "Yard House", attendees: "3", rating: "3.3" });
-
-    	$.ajax({
-        	type: "POST",
-        	url: "/events",
-        	contentType: "application/json",
-        	error: function (xhr, ajaxOptions, thrownError) {
-           		console.log(xhr.status);
-           		console.log(xhr.responseText);
-           		console.log(thrownError);
-       		}
-    	});
-	});  	        	  
 });
 
 
