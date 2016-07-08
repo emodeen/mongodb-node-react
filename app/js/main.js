@@ -87,9 +87,6 @@ $(document).ready(function() {
 	  var newVenue = $("#new-venue").val();
 	  var numAttendees = $("#new-num-attendees").val();
 	  var newRating = $("#new-rating").val();
-
-	  $("table").append('<tr class=\'data-row past-event\'><td class=\'data\'>'+newDate+'</td><td class=\'data\'>'+newTime+'</td><td class=\'data past-venue\'>'+newVenue+'</td><td class=\'data\'>'+numAttendees+'</td><td class=\'data past-rating\'>'+newRating+'</td></tr>');
-
       var newEvent = new NREvent(newVenue, newRating);
 
 	  pastEvents.push(newEvent);
