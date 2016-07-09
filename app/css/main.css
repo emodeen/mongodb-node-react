@@ -32,15 +32,14 @@ footer {
 	background: black;
 	color: white;
 	padding: 2% 3%;
-    position: relative;
+    position: fixed;
     bottom:0;
     width: 100%;
     clear: both;
 }
 
 .main-section {
-
-	
+	margin-bottom: 120px;
 }
 
 /* Styles for the header */
