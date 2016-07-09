@@ -32,15 +32,13 @@ footer {
 	background: black;
 	color: white;
 	padding: 2% 3%;
-    position: fixed;
+    position: relative;
     bottom:0;
     width: 100%;
     clear: both;
 }
 
 /* Styles for the header */
-
-
 #page-header {
 	background: black;
 	color: white;
@@ -124,9 +122,6 @@ footer {
 label {
 	font-size: 15px;
 }
-
-
-
 
 @media only screen and (max-width:640px) {
 	#page-header h1 {
