@@ -29,8 +29,8 @@ p {
 }
 
 footer {
-	background: black;
-	color: white;
+	background: #8fbc8f;
+	color: black;
 	padding: 2% 3%;
     position: fixed;
     bottom:0;
@@ -44,7 +44,8 @@ footer {
 
 #page-header nav ul {
 	float: left;
-	background: #008000;
+	/*background: #008000;*/
+	background: #8fbc8f;
 	width: 100%;
 }
 
