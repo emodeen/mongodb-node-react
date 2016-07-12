@@ -42,29 +42,7 @@ function calcAvgRating(venue) {
 	return avgRating;
 }
 
-function mongoTest() {
-
-		console.log('mongo test');
-}
-
 $(document).ready(function() {
-
-    // Called when index.html is loaded
-	// For each past event in the table, create an object to populate pastEvents array.
-	$( ".past-event" ).each(function( index ) {
-
-		var venue = $(this).find(".past-venue").html();
-		var rating = $(this).find(".past-rating").html();
-
-
-	    var newEvent = new NREvent(venue, rating);
-	    pastEvents.push(newEvent);	
-
-  		//localStorage.setItem('pEvents', pastEvents);
-		localStorage["pEvents"] = JSON.stringify(pastEvents);  
-
-	});
-
 	// Called when the Venues page is loaded. For each venue, create object to add to venues array.
 	$( ".venueRow" ).each(function( index ) {
       var name = $(this).find(".venueName").html();
