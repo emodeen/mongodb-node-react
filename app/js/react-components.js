@@ -33,9 +33,12 @@ var CommentBox = React.createClass({
 });
 
 var EventDeleteBtn = React.createClass({
+  handleClick: function(e) {
+    console.log("clicked " + this.props.event.venue);
+  },  
   render: function() {
     return (
-      <div><button>Delete</button></div>
+      <div><button onClick={this.handleClick}>Delete</button></div>
     );
   }
 });
@@ -49,7 +52,7 @@ var EventRow = React.createClass({
         <td>{this.props.event.venue}</td>
         <td>{this.props.event.attendees}</td>
         <td>{this.props.event.rating}</td>
-        <td><EventDeleteBtn></EventDeleteBtn></td>
+        <td><EventDeleteBtn event={this.props.event}></EventDeleteBtn></td>
       </tr>
     );
   }
