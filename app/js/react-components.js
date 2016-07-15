@@ -26,7 +26,7 @@ var CommentBox = React.createClass({
   render: function() {
     return (     
       <div className="commentBox">
-        <EventTable data={this.state.data}/>
+        <EventTable data={this.state.data} url={this.props.url}/>
       </div>
     );
   }
@@ -44,7 +44,7 @@ var EventDeleteBtn = React.createClass({
 });
 
 var EventRow = React.createClass({
-  render: function() {
+  render: function() {    
     return (
       <tr>
         <td>{this.props.event.date}</td>
