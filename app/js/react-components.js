@@ -44,7 +44,7 @@ var EventDeleteBtn = React.createClass({
 });
 
 var EventRow = React.createClass({
-  render: function() {    
+  render: function() {   
     return (
       <tr>
         <td>{this.props.event.date}</td>
@@ -61,8 +61,10 @@ var EventRow = React.createClass({
 var EventTable = React.createClass({
   render: function() {
     var rows = [];
+    var baseUrl = this.props.url;
+
     this.props.data.forEach(function(event) {
-      rows.push(<EventRow event={event} key={event._id}/>);
+      rows.push(<EventRow event={event} key={event._id} url={baseUrl}/>);
     });
     return (
       <table className="table table-hover">
