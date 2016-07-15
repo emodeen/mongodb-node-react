@@ -1,4 +1,3 @@
-
 var CommentBox = React.createClass({
   loadCommentsFromServer: function() {
     $.ajax({
