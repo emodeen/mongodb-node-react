@@ -74,7 +74,7 @@ app.post('/events', function(req, res) {
 
 // endpoint to DELETE an event
 app.delete('/events/:id', function(req, res) {
-  Event.remove(req.body.id, function(err) {
+  Event.remove( {_id: req.body.id }, function(err) {
     if (!err) {
       console.log("The row has been removed.");
     }

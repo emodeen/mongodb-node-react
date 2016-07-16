@@ -32,12 +32,24 @@ var CommentBox = React.createClass({
 });
 
 var EventDeleteBtn = React.createClass({
-  handleClick: function(e) {
-    console.log("clicked " + this.props.event.venue);
-  },  
+  deleteEvent: function() {
+    $.ajax({
+      url: (this.props.url + "/:" + this.props.event._id),
+      method: 'DELETE',
+      data: JSON.stringify({ id: this.props.event._id }),
+      dataType: 'json',
+      cache: false,
+      success: function(data) {
+        this.setState({data: data});
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  },
   render: function() {
     return (
-      <div><button onClick={this.handleClick}>Delete</button></div>
+      <div><button onClick={this.deleteEvent}>Delete</button></div>
     );
   }
 });
@@ -51,7 +63,7 @@ var EventRow = React.createClass({
         <td>{this.props.event.venue}</td>
         <td>{this.props.event.attendees}</td>
         <td>{this.props.event.rating}</td>
-        <td><EventDeleteBtn event={this.props.event}></EventDeleteBtn></td>
+        <td><EventDeleteBtn event={this.props.event} url={this.props.url}></EventDeleteBtn></td>
       </tr>
     );
   }
