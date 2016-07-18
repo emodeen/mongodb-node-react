@@ -32,12 +32,12 @@ var CommentBox = React.createClass({
 });
 
 var EventDeleteBtn = React.createClass({
-  deleteEvent: function() {
+  deleteEvent: function() {  
     $.ajax({
       url: (this.props.url + "/:" + this.props.event._id),
       method: 'DELETE',
       data: JSON.stringify({ id: this.props.event._id }),
-      dataType: 'json',
+      contentType: "application/json",
       cache: false,
       success: function(data) {
         this.setState({data: data});
