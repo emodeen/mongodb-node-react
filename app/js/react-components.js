@@ -31,6 +31,19 @@ var CommentBox = React.createClass({
   }
 });
 
+
+var EventEditBtn = React.createClass({
+  editEvent: function() {  
+    console.log('edit row');
+  },
+  render: function() {
+    return (
+      <div><button onClick={this.editEvent}>Edit</button></div>
+    );
+  }
+});
+
+
 var EventDeleteBtn = React.createClass({
   deleteEvent: function() {  
     $.ajax({
@@ -63,6 +76,7 @@ var EventRow = React.createClass({
         <td>{this.props.event.venue}</td>
         <td>{this.props.event.attendees}</td>
         <td>{this.props.event.rating}</td>
+        <td><EventEditBtn event={this.props.event} url={this.props.url}></EventEditBtn></td>
         <td><EventDeleteBtn event={this.props.event} url={this.props.url}></EventDeleteBtn></td>
       </tr>
     );
