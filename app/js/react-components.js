@@ -34,8 +34,20 @@ var CommentBox = React.createClass({
 
 var EventEditBtn = React.createClass({
   editEvent: function() {  
-    console.log('edit row');
-  },
+    $.ajax({
+      url: (this.props.url + "/:" + this.props.event._id),
+      method: 'PUT',
+      data: JSON.stringify({ id: this.props.event._id }),
+      contentType: "application/json",
+      cache: false,
+      success: function(data) {
+        this.setState({data: data});
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  },  
   render: function() {
     return (
       <div><button onClick={this.editEvent}>Edit</button></div>

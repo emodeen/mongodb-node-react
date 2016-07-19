@@ -63,7 +63,7 @@ app.get('/events', function (req, res) {
   });    
 });
 
-// endpoint to save an event
+// endpoint to CREATE an event
 app.post('/events', function(req, res) {
   var nrdscEvent = new Event({ date: "6-31-16", time: req.body.time, venue: req.body.venue, attendees: req.body.attendees, rating: req.body.rating });  
 
@@ -84,22 +84,19 @@ app.delete('/events/:id', function(req, res) {
   });
 });  
 
+// endpoint to UPDATE an event
+app.put('/events/:id', function(req, res) {
+  var updatedEvent = { date: "6-31-16", time: '10pm', venue: 'SBUX', attendees: '11', rating: '4.7' };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  Event.findByIdAndUpdate(req.body.id, updatedEvent, function (err, events) {
+    if (!err) {
+      console.log("The row has been updated.");
+    }
+    else {
+      console.log("Error updating the row: " + err);
+    }    
+  });  
+});  
 
 app.listen(app.get('port'), function() {
   console.log('Server started: http://localhost:' + app.get('port') + '/');
