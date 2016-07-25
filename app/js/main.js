@@ -2,6 +2,8 @@
 //var React = require('react');
 //var ReactDOM = require('react-dom');
 
+document.write(require("./content.js"));
+
 var venues = [];
 var pastEvents = [];
 
@@ -117,11 +119,6 @@ $(document).ready(function() {
 	  $(".data").addClass('table-column');
   	});
 });
-
-
-
-
-
 
 
 

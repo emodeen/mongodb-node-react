@@ -42,11 +42,13 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	//var webpack = require('webpack');
 	//var React = require('react');
 	//var ReactDOM = require('react-dom');
+
+	document.write(__webpack_require__(1));
 
 	var venues = [];
 	var pastEvents = [];
@@ -197,10 +199,11 @@
 
 
 
+/***/ },
+/* 1 */
+/***/ function(module, exports) {
 
-
-
-
+	module.exports = "It works from content.js.";
 
 /***/ }
 /******/ ]);
