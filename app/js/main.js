@@ -1,7 +1,4 @@
-//var webpack = require('webpack');
-//var React = require('react');
-//var ReactDOM = require('react-dom');
-
+var rc = require('./react-components');
 document.write(require("./content.js"));
 
 var venues = [];
