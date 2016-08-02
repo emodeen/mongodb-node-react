@@ -1,5 +1,4 @@
 var rc = require('./react-components');
-document.write(require("./content.js"));
 
 var venues = [];
 var pastEvents = [];
