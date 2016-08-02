@@ -4,11 +4,11 @@ This is a web application for keeping track of local social events. For example,
 
 Technology Stack
 
-Data store: MongoDB
-API routing: Express
-Server: Node.js
-JavaScript bundling: Webpack
-Front end: React, jQuery, Bootstrap
+Data store: MongoDB<br>
+API routing: Express<br>
+Server: Node.js<br>
+JavaScript bundling: Webpack<br>
+Front end: React, jQuery, Bootstrap<br>
 
 
 Setup instructions
