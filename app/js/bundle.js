@@ -45,7 +45,6 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var rc = __webpack_require__(1);
-	document.write(__webpack_require__(173));
 
 	var venues = [];
 	var pastEvents = [];
@@ -21402,12 +21401,6 @@
 	var ReactMount = __webpack_require__(165);
 
 	module.exports = ReactMount.renderSubtreeIntoContainer;
-
-/***/ },
-/* 173 */
-/***/ function(module, exports) {
-
-	module.exports = "It works from content.js.";
 
 /***/ }
 /******/ ]);
