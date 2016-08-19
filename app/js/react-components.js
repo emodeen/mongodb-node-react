@@ -1,5 +1,51 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var Modal = require('react-modal-bootstrap');
+
+var App = React.createClass({
+
+  getInitialState: function() {
+    return { modalIsOpen: false };
+  },
+
+  openModal: function() {
+    this.setState({modalIsOpen: true});
+  },
+
+  afterOpenModal: function() {
+    // references are now sync'd and can be accessed.
+    this.refs.subtitle.style.color = '#f00';
+  },
+
+  closeModal: function() {
+    this.setState({modalIsOpen: false});
+  },
+
+  render: function() {
+    return (
+      <div>
+        <button onClick={this.openModal}>Open Modal</button>
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onAfterOpen={this.afterOpenModal}
+          onRequestClose={this.closeModal}
+          style={customStyles} >
+
+          <h2 ref="subtitle">Hello</h2>
+          <button onClick={this.closeModal}>close</button>
+          <div>I am a modal</div>
+          <form>
+            <input />
+            <button>tab navigation</button>
+            <button>stays</button>
+            <button>inside</button>
+            <button>the modal</button>
+          </form>
+        </Modal>
+      </div>
+    );
+  }
+});
 
 var CommentBox = React.createClass({
   loadCommentsFromServer: function() {
@@ -93,6 +139,7 @@ var EventRow = React.createClass({
         <td>{this.props.event.rating}</td>
         <td><EventEditBtn event={this.props.event} url={this.props.url}></EventEditBtn></td>
         <td><EventDeleteBtn event={this.props.event} url={this.props.url}></EventDeleteBtn></td>
+        <td><App event={this.props.event} url={this.props.url}></App></td>
       </tr>
     );
   }

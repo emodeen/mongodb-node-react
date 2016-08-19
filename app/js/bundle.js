@@ -44,6 +44,8 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
+	"use strict";
+
 	var rc = __webpack_require__(1);
 
 	var venues = [];
@@ -125,7 +127,7 @@
 				url: "/events",
 				data: eventData,
 				contentType: "application/json",
-				error: function (xhr, ajaxOptions, thrownError) {
+				error: function error(xhr, ajaxOptions, thrownError) {
 					console.log(xhr.status);
 					console.log(xhr.responseText);
 					console.log(thrownError);
@@ -165,13 +167,98 @@
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
 	var React = __webpack_require__(2);
 	var ReactDOM = __webpack_require__(34);
+	var Modal = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"react-modal-bootstrap\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+	var App = React.createClass({
+	  displayName: 'App',
+
+
+	  getInitialState: function getInitialState() {
+	    return { modalIsOpen: false };
+	  },
+
+	  openModal: function openModal() {
+	    this.setState({ modalIsOpen: true });
+	  },
+
+	  afterOpenModal: function afterOpenModal() {
+	    // references are now sync'd and can be accessed.
+	    this.refs.subtitle.style.color = '#f00';
+	  },
+
+	  closeModal: function closeModal() {
+	    this.setState({ modalIsOpen: false });
+	  },
+
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(
+	        'button',
+	        { onClick: this.openModal },
+	        'Open Modal'
+	      ),
+	      React.createElement(
+	        Modal,
+	        {
+	          isOpen: this.state.modalIsOpen,
+	          onAfterOpen: this.afterOpenModal,
+	          onRequestClose: this.closeModal,
+	          style: customStyles },
+	        React.createElement(
+	          'h2',
+	          { ref: 'subtitle' },
+	          'Hello'
+	        ),
+	        React.createElement(
+	          'button',
+	          { onClick: this.closeModal },
+	          'close'
+	        ),
+	        React.createElement(
+	          'div',
+	          null,
+	          'I am a modal'
+	        ),
+	        React.createElement(
+	          'form',
+	          null,
+	          React.createElement('input', null),
+	          React.createElement(
+	            'button',
+	            null,
+	            'tab navigation'
+	          ),
+	          React.createElement(
+	            'button',
+	            null,
+	            'stays'
+	          ),
+	          React.createElement(
+	            'button',
+	            null,
+	            'inside'
+	          ),
+	          React.createElement(
+	            'button',
+	            null,
+	            'the modal'
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
 
 	var CommentBox = React.createClass({
 	  displayName: 'CommentBox',
 
-	  loadCommentsFromServer: function () {
+	  loadCommentsFromServer: function loadCommentsFromServer() {
 	    $.ajax({
 	      url: this.props.url,
 	      dataType: 'json',
@@ -185,16 +272,16 @@
 	    });
 	  },
 
-	  getInitialState: function () {
+	  getInitialState: function getInitialState() {
 	    return { data: [] };
 	  },
 
-	  componentDidMount: function () {
+	  componentDidMount: function componentDidMount() {
 	    this.loadCommentsFromServer();
 	    setInterval(this.loadCommentsFromServer, this.props.pollInterval);
 	  },
 
-	  render: function () {
+	  render: function render() {
 	    return React.createElement(
 	      'div',
 	      { className: 'commentBox' },
@@ -206,7 +293,7 @@
 	var EventEditBtn = React.createClass({
 	  displayName: 'EventEditBtn',
 
-	  editEvent: function () {
+	  editEvent: function editEvent() {
 	    $.ajax({
 	      url: this.props.url + "/:" + this.props.event._id,
 	      method: 'PUT',
@@ -221,7 +308,7 @@
 	      }.bind(this)
 	    });
 	  },
-	  render: function () {
+	  render: function render() {
 	    return React.createElement(
 	      'div',
 	      null,
@@ -237,7 +324,7 @@
 	var EventDeleteBtn = React.createClass({
 	  displayName: 'EventDeleteBtn',
 
-	  deleteEvent: function () {
+	  deleteEvent: function deleteEvent() {
 	    $.ajax({
 	      url: this.props.url + "/:" + this.props.event._id,
 	      method: 'DELETE',
@@ -252,7 +339,7 @@
 	      }.bind(this)
 	    });
 	  },
-	  render: function () {
+	  render: function render() {
 	    return React.createElement(
 	      'div',
 	      null,
@@ -268,7 +355,7 @@
 	var EventRow = React.createClass({
 	  displayName: 'EventRow',
 
-	  render: function () {
+	  render: function render() {
 	    return React.createElement(
 	      'tr',
 	      null,
@@ -306,6 +393,11 @@
 	        'td',
 	        null,
 	        React.createElement(EventDeleteBtn, { event: this.props.event, url: this.props.url })
+	      ),
+	      React.createElement(
+	        'td',
+	        null,
+	        React.createElement(App, { event: this.props.event, url: this.props.url })
 	      )
 	    );
 	  }
@@ -314,7 +406,7 @@
 	var EventTable = React.createClass({
 	  displayName: 'EventTable',
 
-	  render: function () {
+	  render: function render() {
 	    var rows = [];
 	    var baseUrl = this.props.url;
 
