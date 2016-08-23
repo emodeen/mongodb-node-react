@@ -1,6 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var Modal = require('react-modal-bootstrap');
+var Modal = require('react-modal');
 
 var App = React.createClass({
 

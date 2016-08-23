@@ -30,7 +30,7 @@
     "mongodb": "~2.0",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
-    "react-modal-bootstrap": "^1.1.0"
+    "react-modal": "^1.4.0"
   },
   "scripts": {
     "postinstall": "bower install",
