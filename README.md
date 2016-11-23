@@ -13,7 +13,7 @@ Front end: React, jQuery, Bootstrap<br>
 
 <h2><strong>Setup instructions</strong></h2>
 
-1.	Clone the repository: git clone https://github.com/emodeen/nrdsc.git
+1.	Clone the repository: https://github.com/emodeen/mongodb-node-react.git
 2.  In a new terminal window, start MongoDB: mongod
 3.	In a new terminal window, cd to the directory where the project was cloned to.
 4.  Bundle the JavaScript files: webpack
