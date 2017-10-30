@@ -1,4 +1,4 @@
-var rc = require('./react-components');
+import './react-components.jsx';
 
 var venues = [];
 var pastEvents = [];

@@ -1,6 +1,6 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var Modal = require('react-modal');
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Modal from 'react-modal'
 
 const customStyles = {
   content : {
