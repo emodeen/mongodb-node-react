@@ -1,165 +1,229 @@
-html, body {
-	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 20px;
-	line-height: 1.5;
-	cursor: default;
-	height: 100%;
+
+/******************************************
+/* SETUP                   
+/*******************************************/
+
+/* Box Model Hack */
+* {
+     -moz-box-sizing: border-box; /* Firexfox */
+     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+     box-sizing: border-box; /* IE */
 }
 
-.wrapper {
-	width: 97%;
-	margin: auto;
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+.alignright {
+	float: right; 
+	padding: 0 0 10px 10px; /* note the padding around a right floated image */
+}
+
+.alignleft {
+	float: left; 
+	padding: 0 10px 10px 0; /* note the padding around a left floated image */
+}
+
+/******************************************
+/* BASE STYLES                   
+/*******************************************/
+#container{
+     width: 960px;
+     margin: 0 auto;
+}
+
+
+body {
+	margin: 0;
+	padding: 3em;
+	font-family: 'Lato', sans-serif;
+	font-size: 18px;
+	line-height: 1.5;
+	background: #FFF;
+	color: #444;
+	border-left: 6px solid #DDD;
+}
+
+a {
+	color: #D00;
+	text-decoration: none;
+	-webkit-transition: all 300ms;
+}
+
+a:hover, a:visited, a:link, a:active{
+	/*color: #A00;*/
+	text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
 }
 
 h1 {
-	font-size: 2em;
-	line-height: 1;
+	font-size: 3em;
+	font-weight: normal;
+	margin-top: .35em;
 }
+
+h1 a {
+    color: #D00;
+}
+
 h2 {
-	font-size: 1.5em;
-	font-weight: bold;
+	font-size: 2em;
+	font-weight: normal;
+	color: black;
+	margin: 0;
+	padding: 0;
 }
+h2 a {
+	color: black;
+}
+h2 a:hover {
+	color: #D00;
+}
+
+.titles {
+	height: 100px;	
+    float: left;
+    background: #FFF;
+}
+
+#title1 {
+	width: 30%;
+}
+
+#title2 {
+	width: 70%;
+}
+
 h3 {
-	font-family: 'Merriweather', serif;
-	font-size: 1.25em;
-	font-weight: bold;
+	font-size: 2em;
+	font-weight: normal;
+	color: #CCC;
+	margin: 0;
+	padding: 0;
 }
-p {
-	margin: 0 0 1.5em 0;
+
+h4 {
+	text-align: left;
+}
+
+h5 {
+	text-align: right;
+}
+
+img {
+	display: block;
+	margin: 10px 0;
+	max-width: 100%;
+}
+
+
+header h2 {
+	font-size: 1.5em;
+	margin-top: 1.9em;
+	color: #AAA;
+	text-align: left;
 }
 
 footer {
-	background: #8fbc8f;
-	color: black;
-	padding: 2% 3%;
-    position: fixed;
-    bottom:0;
     width: 100%;
+	color: #BBB;
     clear: both;
 }
 
-.main-section {
-	margin-bottom: 120px;
+header nav a {
+    height: 50px; 
+	border-right: solid 1px #FFF;
+	background: black;
+    width: 16.6666%;
+    float: left;
+    color: #FFF;
+    text-align: center;
+	padding-top: .6em;
 }
 
-#page-header nav ul {
+
+header nav a:hover {
+	color: red;
+	border-bottom-color: #BBB;
+}
+
+article {
+	border-bottom: 1px solid #DDD;
+	margin: 3em 0;
+	padding-bottom: 1.5em;
+}
+article p:first-letter {
 	float: left;
-	/*background: #008000;*/
-	background: #8fbc8f;
-	width: 100%;
+	font-size: 6em;
+	line-height: 1;
+	color: #DDD;
+	margin: -.1em .1em 0 -.1em;
 }
 
-/* Target this for changing nav item background to dark grey */
-#page-header nav ul li {
-	float: left;
-}
-#page-header nav ul li a {
-	display: block;
-	position: relative;
-	z-index: 1;
-	color: inherit;
-	text-decoration: none;
-	padding: 10px 0;
-	margin-right: -1px;
-}
-#page-header nav ul li a span {
-	border-right: 1px solid #ddd;
-	padding: 0 24px 0 25px;
-}
-#page-header nav ul li:last-child a span {
-	border: none;
-	padding-right: 25px;
-}
-#page-header nav ul li a:hover {
-	background: #f6f6f6;
-}
-#page-header nav ul li a:hover span {
-	border: none;
-	padding-right: 25px;
-}
-#page-header nav ul li.active a {
-	z-index: 2;
-	background: #666;
-	color: #f6f666;
-	padding-bottom: 12px;
-	margin-bottom: -2px;
-}
-#page-header nav ul li.active a span {
-	border: none;
-	padding-right: 25px;
-}
-
-.hamburger {
-	background: #000;
-	display: none;
-}
-
-.hamburgerRow {
+.sidebar {
 	background: #FFF;
-	height: 2px;
-	width: 40px;
-	padding: 2px;
-	margin-top: 10px;
+	padding-top: 25px;	
 }
 
-/* Styling for the table */
+#main {
+	float: left;
+	width: 70%;
+	height: 100%;
+}
 
-.header-row {
+#about {
+	border-bottom: 1px solid #DDD;
+	padding-top: 130px;
+}
+
+#popular {
+	border-top: 1px solid #DDD;
+
+}
+
+aside {
+	float: left;
+	width: 30%;
+	height: 1700px;
+	padding-left: 45px;
+}
+
+aside div {
+	height: 33.33%;
+}
+
+aside div h4 {
+	color: #AAA;
 	font-weight: bold;
 }
 
-/* Styling for the form */
-
-.form-group {
-	width: 50%;
+aside div p {
+	color: #AAA;
 }
 
-.form-container {
-	display: block;
-	margin: 20px;
-}
 
-.row-input {
-	width: 10%;
-	border: 1px solid black;
-}
 
-label {
-	font-size: 15px;
-}
 
-@media only screen and (max-width:640px) {
-	#page-header h1 {
-		/*float: left;*/
-		color: yellow;
-		font-family: 'Merriweather', serif;
-		font-size: 1.5em;
-		margin: 20px 0 0 0;
-		width: 50%;
-		/*display: block;*/
-	}
 
-	#page-header nav {
-		float: right;
-		/*display: block;*/
-		width: 50%;
-    }
 
-	#page-header nav li {
-		float: none;
-		display: block;
-	}
 
-	/* Hide the hamburger icon */
-	.hamburger {
-		background: #000;
 
-	}
 
-	#navLinks {
-		display: none;
-	}	    
-}
+
 
 
 

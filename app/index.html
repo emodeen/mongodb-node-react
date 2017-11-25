@@ -2,76 +2,102 @@
 <html lang="en-us">
 	<head>
 		<meta charset="utf-8">
-		<title>Local Events</title>
-	    <link href="css/bootstrap.min.css" rel="stylesheet">
-		<link rel="stylesheet" href="css/reset.css">
+		<title>Sartre’s List</title>
+		<link href='http://fonts.googleapis.com/css?family=Lato:300,700,300italic,700italic' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/main.css">
 	</head>
+
 	<body>
-		<header id="page-header">
-			<nav class="group">
-				<ul id="primary-nav">
-					<li class="international">
-						<a href="index.html">
-							<span>Past Events</span>
-						</a>
-					</li>
-					<li class="politics">
-						<a href="ideas.html">
-							<span>Event Ideas</span>
-						</a>
-					</li>
-					<li class="business">
-						<a href="venues.html">
-							<span>Venues</span>
-						</a>
-					</li>
+		<div id="container">
+			<header>
+				<div id="title1" class="titles">
+				<h1><a href="index.html">Sartre’s List</a></h1>
+			    </div>
+	    
+				<div id="title2" class="titles">
+				<h2>Better-Dressed People</h2>
+				</div>
+
+				<div id="nav_links">
+					<nav>
+						<a href="#">Women’s</a>
+						<a href="#">Men’s</a>
+						<a href="#">On the Street</a>
+						<a href="#">The Catwalk</a>
+						<a href="#">AdWatch</a>
+						<a href="#">About</a>
+					</nav>		
+				</div>
+		
+			</header>
+
+			<section id="main">
+				<article>
+					<h3>11/12/13</h3>
+					<h2><a href="#">On the Street in Brooklyn</a></h2>
+					<img src="img/fashion_photo.jpeg">
+					<p>Cray culpa stumptown, flexitarian ex Odd Future do fugiat Wes Anderson proident 3 wolf moon officia bitters small batch. Et consequat do, nulla you probably haven’t heard of them High Life scenester. Vinyl fugiat High Life, kogi do VHS in aliqua lo-fi leggings gentrify Neutra tumblr. Odio vegan PBR, Marfa forage blue bottle try-hard readymade meggings retro delectus Echo Park. Ugh consectetur farm-to-table forage, laboris blue bottle McSweeney’s tattooed excepteur yr. Magna ut Schlitz flexitarian, vinyl craft beer proident yr forage 8-bit ethical sustainable placeat retro. Officia pickled beard, adipisicing gluten-free sint craft beer quis thundercats id 3 wolf moon fashion axe.</p>
+					<h5><a href="#">Continues...</a></h5>
+				</article>
+				<article>
+					<h3>11/11/13</h3>
+					<h2><a href="#">Vintage in Vogue</a></h2>
+					<img src="img/fashion_photo2.jpeg">
+					<p>Selfies sunt Tumblr, delectus small batch DIY umami sint. Polaroid chambray selfies McSweeney's Cosby sweater, Pitchfork tattooed assumenda Wes Anderson Blue Bottle twee Carles ennui. Nisi locavore fugiat sapiente salvia aliqua. Shoreditch kogi exercitation fashion axe. Wolf semiotics Pinterest, laboris quis master cleanse tousled small batch street art bespoke fingerstache dreamcatcher ethical labore. Dreamcatcher iPhone typewriter, tote bag four loko fanny pack master cleanse organic PBR reprehenderit actually. Craft beer drinking vinegar wayfarers, pork belly narwhal pariatur polaroid cupidatat in 8-bit distillery anim literally.</p>
+					<h5><a href="#">Continues...</a></h5>
+				</article>
+			</section>
+
+			<aside>
+				<div id="about" class="sidebar">
+				<h4>About Us</h4>
+				<p>Sartre's list is u salvia, fixie mumblecore ex aesthetic qui minim blog cliche. Retro disrupt keytar PBR, delectus consectetur flexitarian fingerstache selfies nostrud Schlitz. Tempor Wes Anderson banh mi bicycle rights. Eu occaecat Williamsburg yr letterpress, biodiesel plaid tote bag cliche messenger bag lomo bespoke sapiente next level.</p>
+				<h5><a href="#">More...</a></h5>
+				</div>
+
+				<div id="ad" class="sidebar">
+				<h4>Ad</h4>
+				</div>
+
+				<div id="popular" class="sidebar">
+				<h4>Popular Posts</h4>
+				<ul>
+					<li><a href="#">One</a></li>
+					<li><a href="#">Two</a></li>
+					<li><a href="#">Three</a></li>
+					<li><a href="#">Four</a></li>
+					<li><a href="#">Five</a></li>
+					<li><a href="#">Six</a></li>
+					<li><a href="#">Seven</a></li>
+					<li><a href="#">Eight</a></li>
+					<li><a href="#">Nine</a></li>
+					<li><a href="#">Ten</a></li>
 				</ul>
-			</nav>
-		</header>
-		<section class="main-section">
-			<div id="content"></div>
-			
-			<form class="form-horizontal" id='past-form'>
-			  <div class="form-group">
-			    <label for="new-date" class="col-sm-2 control-label">Date</label>
-			    <div class="col-sm-10">
-			      <input type="date" class="form-control" id="new-date" placeholder="Date">
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="new-time" class="col-sm-2 control-label">Time</label>
-			    <div class="col-sm-10">
-			      <input type="time" class="form-control" id="new-time" placeholder="Time">
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="new-venue" class="col-sm-2 control-label">Venue</label>
-			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="new-venue" placeholder="Venue">
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="new-num-attendees" class="col-sm-2 control-label"># Attendees</label>
-			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="new-num-attendees" placeholder="# Attendees">
-			    </div>
-			  </div>  
-			  <div class="form-group">
-			    <label for="new-rating" class="col-sm-2 control-label">Rating</label>
-			    <div class="col-sm-10">
-			      <input type="float" class="form-control" id="new-rating" placeholder="Rate on scale of 1-5">
-			    </div>
-			  </div>    
-			  <div class="form-group">
-			    <div class="col-sm-offset-2 col-sm-10">
-			      <button type="submit" class="btn btn-default">Save Event</button>
-			    </div>
-			  </div>
-			</form>
-		</section>
-		<footer>© 2016 NRDSC</footer>
-		<script src="js/jquery-2.1.4.js"></script>
-		<script type="text/javascript" src="js/bundle.js" charset="utf-8"></script>
+				</div>
+			</aside>
+
+			<footer>
+				<nav>
+					<a href="index.html">Home</a>
+					|
+					<a href="#">Women’s</a>
+					|
+					<a href="#">Men’s</a>
+					|
+					<a href="#">On the Street</a>
+					|
+					<a href="#">The Catwalk</a>
+					|
+					<a href="#">AdWatch</a>
+					|
+					<a href="#">About</a>
+					|
+					<a href="#">Tips</a>
+				</nav>
+				<p>&copy; 2013 Valet Industries, Inc.</p>
+			</footer>
+		</div>
+		<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')
+		</script>
 	</body>
 </html>
